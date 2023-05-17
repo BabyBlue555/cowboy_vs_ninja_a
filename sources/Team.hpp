@@ -3,6 +3,10 @@
 #include <vector>
 #include "Cowboy.hpp"
 #include "Ninja.hpp"
+#include "Character.hpp"
+#include "OldNinja.hpp"
+#include "YoungNinja.hpp"
+#include "TrainedNinja.hpp"
 
 namespace ariel
 {
@@ -43,6 +47,17 @@ namespace ariel
 			* @brief This is a virtual destructor because this class is inherited to other classes.
 			*/
 			virtual ~Team();
+
+	
+			// copy constructor
+			Team(Team &);
+			// copy assignment operator
+			Team &operator=(const Team &) noexcept;
+			// move constructor
+			Team(Team &&) noexcept;
+			// move assignment operator
+			Team &operator=(Team &&) noexcept;
+  
 
 			/*
 			* @brief Add a member to the team.

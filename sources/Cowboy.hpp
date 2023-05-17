@@ -21,6 +21,11 @@ namespace ariel
 			Cowboy(std::string name, Point location);
 
 			/*
+			* @brief default constructor, gererates two random doubles as a Point
+			*/
+			Cowboy();
+
+			/*
 			* @brief Shoots another character.
 			* @param other The other character.
 			* @return void
@@ -32,7 +37,7 @@ namespace ariel
 			* @brief Checks if the cowboy has bullets.
 			* @return True if the cowboy has bullets, false otherwise.
 			*/
-			bool hasBullets() const;
+			bool hasboolets() const;
 
 			/*
 			* @brief Reloads the cowboy's gun back to 6 bullets.

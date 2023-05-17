@@ -11,28 +11,19 @@ class Point{
 
     public:
         Point(double x_ptr,double y_ptr);
-        double distance(Point point);
+        double distance(const Point point) const;
         std::string print() const;
         //Point moveTowards(Point src,Point dst,int dist);
-        static const Point &moveTowards(const Point &curr, const Point &other, const double dist);
+        static Point moveTowards(Point curr, Point other, const double dist){
+            return curr;   
+        }
         double getX() const;
         double getY() const;
 
+// static Point moveTowards(Point src, Point dest, double dist){
 };
 
 
 
 }
 
-
-// //class Programmer
-// {
-// public:
-// Person person;
-// private:
-// std::string _company;
-// public:
-// string getCompany() const {...}
-// void setCompany(string c) {...}
-// …
-// ;

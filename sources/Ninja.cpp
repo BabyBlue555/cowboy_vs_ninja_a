@@ -20,8 +20,8 @@ string Ninja::print() const
 	return "";
 }
 
-YoungNinja::YoungNinja(string name, Point location) : Ninja(name, location, 100, 14) {}
+// YoungNinja::YoungNinja(string name, Point location) : Ninja(name, location, 100, 14) {}
 
-TrainedNinja::TrainedNinja(string name, Point location) : Ninja(name, location, 120, 12) {}
+// TrainedNinja::TrainedNinja(string name, Point location) : Ninja(name, location, 120, 12) {}
 
-OldNinja::OldNinja(string name, Point location) : Ninja(name, location, 140, 8) {}
+// OldNinja::OldNinja(string name, Point location) : Ninja(name, location, 140, 8) {}

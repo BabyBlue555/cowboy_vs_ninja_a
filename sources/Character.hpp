@@ -3,13 +3,13 @@
 #include "Point.hpp"
 
 #include <string>
-#include "Point.hpp"
+
 
 namespace ariel
 {
 	class Character
 	{
-		protected:
+		private:
 			/*
 			* @brief The name of the character.
 			*/
@@ -40,6 +40,17 @@ namespace ariel
 			*/
 			Character(std::string name, Point& location, int health_points);
 
+			// copy constructor
+			Character(Character &_otherChar) noexcept=delete;
+			// copy assignment operator
+			Character &operator=(const Character &) noexcept;
+			// move constructor
+			Character(Character &&) noexcept=delete;
+			// move assignment operator
+			Character &operator=(Character &&) noexcept;
+			// destructor
+			virtual ~Character();
+
 			/*
 			* @brief Checks if the character is alive.
 			* @return True if the character is alive, false otherwise.
@@ -67,6 +78,8 @@ namespace ariel
 			* @return The name of the character.
 			*/
 			std::string getName() const;
+
+			void setName(std::string);
 
 			/*
 			* @brief Gets the location of the character.
@@ -98,6 +111,10 @@ namespace ariel
 			* @return The health points of the character.
 			*/
 			int getHP() const;
+
+			void setHP(int);
+            
+    
 
 			/*
 			* @brief Prints the character.

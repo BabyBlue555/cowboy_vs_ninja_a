@@ -15,28 +15,29 @@ Team::Team(Character *leader) : _leader(leader), _size(1)
 
 Team::~Team()
 {
-	Cowboy *c = nullptr;
-	Ninja *n = nullptr;
-
-	while (_members.size() > 0)
-	{
-		Character *tmp = _members.back();
-		_members.pop_back();
-		
-		c = dynamic_cast<Cowboy *>(tmp);
-		n = dynamic_cast<Ninja *>(tmp);
-
-		if (c != nullptr)
-		{
-			delete c;
+	
+	 for (std::vector<Character *>::iterator i = _members.begin(); i != _members.end(); ++i) {
+			delete *i;
+			
 		}
+	_members.clear();
 
-		else if (n != nullptr)
-		{
-			delete n;
-		}
-	}
 }
+
+
+Team &Team::operator=(const Team &_otherTeam) noexcept 
+{
+    this->_members= _otherTeam._members;
+    return *this;
+}
+// move constructor
+Team::Team(Team &&_otherTeam) noexcept {}
+// move assignment operator
+Team &Team::operator=(Team &&_otherTeam) noexcept 
+{
+    return _otherTeam=*this;
+}
+
 
 void Team::add(Character *member)
 {

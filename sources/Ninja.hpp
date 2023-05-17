@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Character.hpp"
+#include <string>
 
 namespace ariel
 {
@@ -44,36 +45,4 @@ namespace ariel
 			std::string print() const override;
 	};
 
-	class YoungNinja : public Ninja
-	{
-		public:
-			/*
-			* @brief Construct a new Young Ninja object.
-			* @param name The name of the young ninja.
-			* @param location The starting location of the young ninja.
-			*/
-			YoungNinja(std::string name, Point location);
-	};
-
-	class TrainedNinja : public Ninja
-	{
-		public:
-			/*
-			* @brief Construct a new Trained Ninja object.
-			* @param name The name of the trained ninja.
-			* @param location The starting location of the trained ninja.
-			*/
-			TrainedNinja(std::string name, Point location);
-	};
-
-	class OldNinja : public Ninja
-	{
-		public:
-			/*
-			* @brief Construct a new Old Ninja object.
-			* @param name The name of the old ninja.
-			* @param location The starting location of the old ninja.
-			*/
-			OldNinja(std::string name, Point location);
-	};
 }
