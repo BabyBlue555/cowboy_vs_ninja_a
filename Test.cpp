@@ -140,11 +140,11 @@ TEST_CASE("5-Cowboy shoots Ninja"){
 
 TEST_CASE("6-Team1 attacks Team2"){
     Cowboy *cow_1=new Cowboy("Don",Point(0,0));
-    Cowboy *cow_2=new Cowboy("Danny",Point(-2,-2));
-    OldNinja *O_ninja=new OldNinja("Bon",Point(-4,-4));
     TrainedNinja *T_ninja=new TrainedNinja("Mia",Point(1,1));
     Cowboy *cow_3=new Cowboy("Shawn",Point(2,2));
+    OldNinja *O_ninja=new OldNinja("Bon",Point(-4,-4));
     YoungNinja *Y_ninja =new YoungNinja("Dina",Point(-3,-3));
+    Cowboy *cow_2=new Cowboy("Danny",Point(-2,-2));   
 
     Team team1(cow_1);
     Team *team2=new Team(O_ninja);
@@ -163,8 +163,6 @@ TEST_CASE("6-Team1 attacks Team2"){
 
     team1.attack(team2);
 
-
-
-
+    CHECK_FALSE(Y_ninja->isAlive());// Dina - the new leader of team2 should be dead
 
 }
